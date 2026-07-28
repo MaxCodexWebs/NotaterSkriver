@@ -1,0 +1,17 @@
+[
+    {
+        "badge": "Version 0.7",
+        "title": "Die Version ist wieder Benutzbar",
+        "content": "Die Fehler bei den Seitenabbrüchen wurden behoben, sodass alle Seitenumbrüche wieder korrekt funktionieren. Zudem laden und erscheinen alle Bilder ab sofort wieder fehlerfrei."
+    },
+    {
+        "badge": "Neu",
+        "title": "Barrierefreiheit verbessert",
+        "content": "Die WebApp ist nun besser mit Screenreader bedienbar, damit JEDER Notater Skriver problemlos nutzen kann."
+    },
+    {
+        "badge": "Info",
+        "title": "Willkommen",
+        "content": "Dies ist die offizielle Notater-News-Seite."
+    }
+]
