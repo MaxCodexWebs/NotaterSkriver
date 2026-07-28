@@ -9,12 +9,12 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "Icons/Logo_Notater.png",
+      "src": "./Logo_Notater.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "Icons/Logo_Notater.png",
+      "src": "./Logo_Notater.png",
       "sizes": "512x512",
       "type": "image/png"
     }
