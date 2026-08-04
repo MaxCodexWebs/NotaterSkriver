@@ -13,8 +13,8 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-<div id="wordDashboard" class="word-dashboard">
-  <div class="dash-topbar"><div class="dash-brand"><img src="Logo_Notater.png" alt="Logo" class="app-logo"><span>Notater Skriver</span></div><div class="dash-controls"></div></div>
+<div id="ntsDashboard" class="nts-dashboard">
+  <div class="dash-topbar"><div class="dash-brand"><img src="pictures/Logo_Notater.png" alt="Logo" class="app-logo"><span>Notater Skriver</span></div><div class="dash-controls"></div></div>
   <div class="dash-content-wrapper">
     <div class="dash-main-section">
       <h2 class="section-title">Neu erstellen</h2>
@@ -46,7 +46,7 @@
 	    <i data-lucide="arrow-left"></i>
 	  </button>
       <div class="app-brand">
-        <div class="app-logo"><img src="Logo_Notater.png" alt="Logo" class="app-logo"></div>
+        <div class="app-logo"><img src="pictures/Logo_Notater.png" alt="Logo" class="app-logo"></div>
         <p>Notater Skriver</p>
         <span class="app-version">Beta Version 0.7</span>
       </div>
@@ -67,8 +67,8 @@
       <button class="tn-btn" data-tab="tab-sett-inn">Einfügen</button>
       <button class="tn-btn" data-tab="tab-format">Format</button>
       <button class="tn-btn" data-tab="tab-tool">Tools</button>
-	  <button class="tn-btn" data-tab="tab-export">Export</button>
-	  <button class="tn-btn" data-tab="tab-katalog">Katalog</button>
+      <button class="tn-btn" data-tab="tab-katalog">Katalog</button>
+	    <button class="tn-btn" data-tab="tab-export">Export</button>
       <button class="tn-btn" data-tab="tab-visning">Ansicht</button>
     </div>
 
@@ -279,7 +279,7 @@
       <div class="group">
         <span class="group-label">Zeilenabstand <span class="arrow">▶</span></span>
         <div class="group-content">
-          <select class="tb-select" id="lineHeightSelector" style="width:50px">
+          <select class="tb-select" id="lineHeightSelector" style="width:60px">
             <option value="1.00">1</option>
             <option value="1.15">1.15</option>
             <option value="1.5" selected>1.5</option>
@@ -301,7 +301,7 @@
             <option value="letter">Letter</option>
             <option value="tabloid">Tabloid</option>
           </select>
-          <select class="tb-select" id="paperOrientation" style="width:120px">
+          <select class="tb-select" id="paperOrientation" style="width:140px">
             <option value="portrait">📄 Hochformat</option>
             <option value="landscape">📰 Querformat</option>
           </select>
@@ -366,7 +366,7 @@
         <button class="tb-btn" id="saveTXT" title="Als Textdatei exportieren" aria-label="TXT Export"><i data-lucide="file-text" class="EJ"></i> TXT</button>
         <button class="tb-btn" id="saveHTML" title="Als HTML exportieren" aria-label="HTML Export"><i data-lucide="file-code" class="EJ"></i> HTML</button>
         <button class="tb-btn" id="saveMD" title="Als Markdown exportieren" aria-label="MD Export"><i data-lucide="file-edit" class="EJ"></i> MD</button>
-		<button class="tb-btn" id="saveDOC" title="Als MS Word Dokument exportieren" aria-label="Doc Export"><i data-lucide="file-text" class="EJ"></i> DOC</button>
+		<button class="tb-btn" id="saveDOCX" title="Als MS Word Dokument exportieren" aria-label="Docx Export"><i data-lucide="file-text" class="EJ"></i> DOCX</button>
 		<!--<button class="tb-btn" id="saveNTS" title="Als natives Dateiformat exportieren" aria-label="NTS Export">NTS</button>
     <input type="file" accept=".nts" id="loadNTS">-->
       </div>
@@ -461,6 +461,7 @@ function googleTranslateElementInit() {
     });
   }
 </script>
+<script src="https://unpkg.com/html-docx-js/dist/html-docx.js"></script>
 <script src="single-editor.js"></script>
 <script src="script.js"></script>
 </body>
