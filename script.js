@@ -1086,15 +1086,47 @@ function buildImgToolbar(wrap) {
     a.download = (document.getElementById('docTitle').value||'dokument')+'.md'; a.click(); toast('📝 Als Markdown (.md) exportiert');
   });
 
-  document.getElementById('saveDOC').addEventListener('click', () => {
-    const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export</title></head><body>";
-    let html = ""; document.querySelectorAll('.editor').forEach(ed => html += ed.innerHTML);
-    const sourceHTML = header + html + "</body></html>";
-    const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
-    const a = document.createElement("a"); document.body.appendChild(a); a.href = source;
-    a.download = (document.getElementById('docTitle').value || 'Dokument') + '.doc'; a.click(); document.body.removeChild(a);
-    toast('📘 Als Word-Dokument (.doc) exportiert');
-  });
+    document.getElementById('saveDOCX').addEventListener('click', () => {
+    let htmlContent = "";
+    document.querySelectorAll('.editor').forEach(ed => {
+        htmlContent += ed.innerHTML + "<br>"; // Trennung zwischen mehreren Editoren
+    });
+
+    const sourceHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Export</title>
+        </head>
+        <body>
+            ${htmlContent}
+        </body>
+        </html>
+    `;
+
+    const converted = htmlDocx.asBlob(sourceHTML);
+
+    const filename = (document.getElementById('docTitle').value || 'Dokument') + '.docx';
+    
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(converted, filename);
+    } else {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(converted);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        
+        // Aufräumen
+        setTimeout(() => {
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(link.href);
+        }, 100);
+    }
+
+    toast('Als DOCX Datei exportiert');
+});
   
 /*document.getElementById('saveNTS').addEventListener('click', () => {
 
