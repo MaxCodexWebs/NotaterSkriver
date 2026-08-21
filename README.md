@@ -6,90 +6,71 @@
 
 ## Deutsch
 
-**Notater Skriver** ist eine moderne, schlanke Webanwendung zur Textverarbeitung, entwickelt mit HTML, CSS und JavaScript. 
+**Notater Skriver** ist ein schlanker, hochperformanter Web-Texteditor, der für maximale Effizienz im Browser entwickelt wurde. Die Anwendung ist ab sofort vollständig für den mobilen Einsatz auf Smartphones und Tablets optimiert.
 
-> ⚠️ **Hinweis:** Die Website und die Benutzeroberfläche sind derzeit **nur auf Deutsch** verfügbar.
+### Systemarchitektur und Design
+Die Anwendung setzt auf eine moderne, minimalistische Benutzeroberfläche. Durch neue, elegante Hintergrundoptionen lässt sich der Fokus gezielt auf den Schreibprozess lenken, unabhängig von der Bildschirmgröße.
 
-### Aufbau der Anwendung
-Die Webanwendung ist in zwei Hauptbereiche unterteilt:
+1. **Dashboard:** Das zentrale Verwaltungszentrum.
+   * **Schnelleinstieg:** Sofortige Erstellung neuer Dokumente.
+   * **Übersicht:** Verwaltung der zuletzt bearbeiteten Dateien inkl. Zeitstempel.
+   * **Notater News:** Zentrale Informationsquelle für Updates, Barrierefreiheit und technische Changelogs.
+2. **Bearbeitungsansicht:** Eine voll ausgestattete Editor-Umgebung. Die responsive Architektur garantiert, dass die Werkzeugleiste sowohl auf Desktop-Systemen als auch auf mobilen Endgeräten präzise bedienbar bleibt.
 
-1. **Das Dashboard:** Die zentrale Startseite zur Verwaltung deiner Arbeit.
-   * **Neu erstellen:** Schnelles Anlegen eines neuen, leeren Dokuments mit einem Klick.
-   * **Zuletzt verwendet:** Eine Übersicht deiner zuletzt bearbeiteten Dokumente inklusive Zeitstempel und einer Option zum schnellen Löschen.
-   * **Notater News:** Ein integrierter Feed für Ankündigungen, wichtige Info-Meldungen, Barrierefreiheits-Updates (z. B. Screenreader-Optimierungen) und Versionshinweise (Changelogs).
-2. **Die Bearbeitungsansicht:** Der eigentliche Editor mit einer vollwertigen Werkzeugleiste für die professionelle Textformatierung.
+### Datensicherheit und Speicher
+Die Anwendung nutzt **IndexedDB** zur lokalen Speicherung. Ihre Daten verlassen zu keinem Zeitpunkt das Gerät und bleiben lokal auf Ihrem Browser-Speicher gesichert – eine externe Datenbank ist nicht erforderlich.
 
-### Datenspeicherung
-Deine Dokumente werden sicher und direkt im Browser über **IndexedDB** gespeichert. Dadurch bleiben alle Texte und Bearbeitungsstände auch nach dem Schließen oder Aktualisieren des Tabs lokal auf deinem Gerät erhalten, ohne dass eine externe Datenbank benötigt wird.
+### Funktionsübersicht
+Die Oberfläche ist in logische Reiter gegliedert:
+* **Start:** Zentrale Formatierung (Schrift, Farbe, Stil, Ausrichtung).
+* **Einfügen:** Tabellen, Listen und strukturierte Trennelemente.
+* **Format:** Layout-Anpassungen, Zeilenabstände und Seitenränder.
+* **Tools:** Such- und Ersetzungs-Algorithmen.
+* **Export:** Unterstützung für PDF, .doc, HTML und .txt.
+* **Katalog:** Integriertes Benutzerhandbuch für den schnellen Zugriff auf Funktionen.
+* **Ansicht:** Anpassbare UI-Modi und Fokus-Optionen.
 
-### Struktur und Menüfunktionen (Bearbeitungsansicht)
-Die Editor-Oberfläche ist intuitiv in verschiedene Reiter unterteilt, wie man es von modernen Texteditoren kennt:
-* **Start:** Schneller Zugriff auf Schriftarten, Textgrößen, Stile, Effekte (wie hoch- und tiefgestellt), Textfarben und Ausrichtungen.
-* **Einfügen:** Einbinden von Tabellen, Listen (Aufzählungen/Nummerierungen) und Trennlinien für strukturierte Dokumente.
-* **Format:** Erweiterte Werkzeuge zur Layout-Anpassung, für Zeilenabstände und Seitenränder.
-* **Tools:** Nützliche Hilfsmittel wie die Suchen-und-Ersetzen-Funktion.
-* **Export:** Schnelles Speichern der Arbeit als PDF, Word-Dokument (.doc), HTML oder reine Textdatei (.txt).
-* **Katalog:** Hier befindet sich das integrierte **Benutzerhandbuch** mit allen wichtigen Informationen zur Anwendung.
-* **Ansicht:** Optionen zur Anpassung der Benutzeroberfläche und des Fokus-Modus.
+### Leistung und Benutzerführung
+* **Echtzeit-Statistiken:** Die Statusleiste überwacht kontinuierlich Wortanzahl, Zeichen und Lesezeit.
+* **Präzisions-Editing:** Hoch- und tiefgestellte Zeichen für wissenschaftliche Notationen sind nativ integriert.
+* **Workflow:** Volle Unterstützung von Standard-Tastenkombinationen für effizientes Arbeiten.
 
-### Hauptfunktionen
-* **Echtzeit-Textformatierung:** Ändere Schriftarten, Textgrößen, Farben und Stile direkt beim Schreiben.
-* **Erweiterte Effekte:** Mathematische oder chemische Notationen durch einfachen Klick auf hoch- oder tiefgestellten Text.
-* **Statistiken in Echtzeit:** Die Statusleiste am unteren Rand zeigt dir stets die aktuelle Anzahl der Wörter, Zeichen sowie die geschätzte Lesezeit an.
-* **Verlaufskontrolle:** Fehler schnell korrigieren mit den integrierten Undo- und Redo-Pfeilen.
-
-### Benutzerhandbuch & Tastenkombinationen
-Für eine effiziente Bedienung öffne bitte das integrierte **Benutzerhandbuch** über den Reiter **Katalog**. Dort findest du eine vollständige Liste aller gängigen Tastenkombinationen für ein flüssiges Arbeiten:
-* `Strg + B` / `Strg + Shift + B`: Text fetten
-* `Strg + I`: Text kursiv setzen
-* Viele weitere standardisierte Tastenkombinationen gängiger Schreibprogramme.
-
-### Danksagung & Credits
-* **Icons:** Die Benutzeroberfläche nutzt die Open-Source-Icons von [Lucide](https://lucide.dev).
-* **Entwickler:** Dieses Projekt wird mit viel Liebe zum Detail entwickelt. Alle Rechte vorbehalten.
+### Credits
+* **Icons:** Bereitgestellt durch [Lucide](https://lucide.dev).
+* **Status:** Kontinuierliche Weiterentwicklung. Alle Rechte vorbehalten.
 
 ---
 
 ## English
 
-**Notater Skriver** is a modern, lightweight web-based word processor built using HTML, CSS, and JavaScript.
+**Notater Skriver** is a lightweight, high-performance web-based word processor designed for maximum efficiency. The application is now fully optimized for mobile devices, offering a seamless experience across smartphones and tablets.
 
-> ⚠️ **Note:** The website and user interface are currently **only available in German**.
+### Architecture and Design
+Built with a minimalist approach, the interface features new, sleek background themes to enhance focus and reduce eye strain, regardless of your screen size.
 
-### Application Structure
-The web application is split into two main sections:
-
-1. **The Dashboard:** The central hub used for managing your work.
-   * **Neu erstellen (Create New):** Quickly start a new, blank document with a single click.
-   * **Zuletzt verwendet (Recent Documents):** An overview of your recently edited files, complete with timestamps and a quick-delete option.
-   * **Notater News:** A built-in feed for general announcements, information updates, accessibility improvements (e.g., screen reader support), and version changelogs.
-2. **The Editor View:** The actual writing interface equipped with a full toolbar for professional text formatting.
+1. **The Dashboard:** The central hub for project management.
+   * **Create New:** Initiate documents with minimal latency.
+   * **Recent Documents:** Access your latest work with integrated deletion options.
+   * **Notater News:** Dedicated feed for application updates, accessibility improvements, and version history.
+2. **The Editor View:** A professional-grade writing environment. The responsive design ensures the toolbar remains functional and intuitive on touch-based devices.
 
 ### Data Storage
-Your documents are stored securely and directly within the browser using **IndexedDB**. This ensures that all texts and project states are saved locally on your device even after closing or refreshing the tab, without requiring an external database.
+Your data is managed exclusively via **IndexedDB**. Documents are stored locally within your browser, ensuring privacy and persistence without the need for server-side databases.
 
-### Structure and Menu Functions (Editor View)
-The editor interface is intuitively divided into various tabs, familiar from professional text editors:
-* **Start:** Quick access to fonts, text sizes, styles, effects (like superscript/subscript), text colors, and alignments.
-* **Einfügen (Insert):** Integration of tables, lists (bullet points/numbering), and horizontal lines for structured documents.
-* **Format:** Advanced tools for layout adjustments, line spacing, and page margins.
-* **Tools:** Useful utilities such as the built-in find-and-replace feature.
-* **Export:** Quickly save your work as a PDF, Word Document (.doc), HTML, or plain text (.txt).
-* **Katalog (Catalog):** Contains the built-in **User Manual** with all essential application insights.
-* **Ansicht (View):** Interface customization and focus mode options.
+### Key Menu Categories
+* **Start:** Comprehensive text formatting tools.
+* **Insert:** Tables, lists, and horizontal separators.
+* **Format:** Layout controls, line spacing, and margins.
+* **Tools:** Find-and-replace utilities.
+* **Export:** Direct file output to PDF, .doc, HTML, and .txt.
+* **Catalog:** Access the built-in user manual.
+* **View:** Interface customization and focus mode settings.
 
-### Key Features
-* **Real-Time Text Formatting:** Modify fonts, text sizes, colors, and styles on the fly.
-* **Advanced Text Effects:** Easily create mathematical or chemical notations using superscript and subscript.
-* **Live Document Statistics:** The bottom status bar tracks your words, characters, and estimated reading time in real time.
-* **History Control:** Quickly correct mistakes with integrated undo and redo actions.
-
-### User Manual & Shortcuts
-For an efficient workflow, please refer to the built-in **User Manual** located under the **Katalog** tab. It contains a full list of standard keyboard shortcuts to speed up your writing:
-* `Ctrl + B`: Bold text
-* `Ctrl + I`: Italic text
-* Many other industry-standard shortcuts used in popular text processors.
+### Performance Features
+* **Real-Time Analytics:** Word counts, character metrics, and estimated reading time are updated live in the status bar.
+* **Scientific Precision:** Native support for superscript and subscript notation.
+* **Efficiency:** Complete support for industry-standard keyboard shortcuts.
 
 ### Credits
-* **Icons:** The user interface features open-source icons provided by [Lucide](https://lucide.dev).
-* **Developer:** This project is developed with great care and dedication. All rights reserved.
+* **Icons:** Provided by [Lucide](https://lucide.dev).
+* **Development:** Developed with an emphasis on performance and clean design. All rights reserved.
