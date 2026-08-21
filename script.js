@@ -360,32 +360,33 @@ if (typeof loadRecentDocs === 'function') {
     letter:  {portrait: {w: 816, h: 1056},  landscape: {w: 1056, h: 816}},
     tabloid: {portrait: {w: 1056, h: 1632}, landscape: {w: 1632, h: 1056}},
   };
-
-
-  /* ── TOAST ───────────────────────────────────────────────── */
+    /* ── TOAST & AUTOSAVE ────────────────────────────────────── */
   let toastT;
+  let autoSaveTimeout; 
+
   function toast(msg, ms=2600) {
     toastEl.textContent = msg;
     toastEl.classList.add('show');
     clearTimeout(toastT);
     toastT = setTimeout(() => toastEl.classList.remove('show'), ms);
   }
+
   // Echtes Autosave
   let currentDocId = 'doc_' + Date.now();
+  
   function scheduleAutoSave() {
-    clearTimeout(autoSaveTimeout);
+    clearTimeout(autoSaveTimeout); 
     autoSaveTimeout = setTimeout(async () => {
-      try{
+      try {
         const content = document.getElementById('pageStack').innerHTML;
         const title = document.getElementById('docTitle').value || 'Unbekanntes Dokument';
         await saveDocumentToDB(currentDocId, title, content);
-      }catch (error) {
+      } catch (error) {
         console.error("Datenbank-Fehler:", error);
         toast("Fehler beim Speichern :(");
       }
-    }, 1500)
+    }, 1500);
   }
-
   /* ── THEME ────────────────────────────────────────────────── */
   function applyTheme(val) {
     document.body.className = '';
