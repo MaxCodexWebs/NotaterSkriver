@@ -1640,7 +1640,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 // --- 5. NEU: QUICK-TAB-SWITCH (Alt + Zahl 1-7) ---
-// Korrigiert: Nutzt e.code statt e.key, um Layout-Probleme zu vermeiden
 if (isAlt && /^Digit[1-7]$/.test(e.code)) {
     e.preventDefault();
     // Holt die Zahl aus "DigitX" und zieht 1 ab für den Array-Index (0-6)
@@ -1651,8 +1650,8 @@ if (isAlt && /^Digit[1-7]$/.test(e.code)) {
         'tab-sett-inn', // Alt + 2 (Index 1)
         'tab-format',   // Alt + 3 (Index 2)
         'tab-tool',     // Alt + 4 (Index 3)
-        'tab-export',   // Alt + 5 (Index 4)
-        'tab-katalog',  // Alt + 6 (Index 5)
+        'tab-katalog',  // Alt + 5 (Index 4)
+        'tab-export',   // Alt + 6 (Index 5)
         'tab-visning'   // Alt + 7 (Index 6)
     ];
     
@@ -1662,7 +1661,6 @@ if (isAlt && /^Digit[1-7]$/.test(e.code)) {
     }
 }
 });
-
 // Hilfsfunktion zum Wechseln der Tabs im Ribbon (falls nicht global definiert)
 function switchTab(tabId) {
     const tabButton = document.querySelector(`[data-tab="${tabId}"]`);
