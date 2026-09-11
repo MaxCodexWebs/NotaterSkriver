@@ -167,64 +167,14 @@
   <div class="color-palette" id="colorPalette">
     </div>
 </div>
-<select class="tb-select" id="highlightColor" style="width: 140px;" aria-label="Text Markierung hinzufügen">
-  <option value="transparent">Keine Markierung</option>
-  
-  <optgroup label="Warme Töne">
-    <option value="#e11d48">Neonrot</option>
-    <option value="#991b1b">Rubinrot</option>
-    <option value="#ff4500">Orangerot</option>
-    <option value="#f97316">Sunset</option>
-    <option value="#ffaa00">Mandarine</option>
-    <option value="#eab308">Gelb</option>
-    <option value="#d97706">Bernstein</option>
-  </optgroup>
-  
-  <optgroup label="Naturfarben">
-    <option value="#10b981">Mint</option>
-    <option value="#00ff66">Acid</option>
-    <option value="#15803d">Waldgrün</option>
-    <option value="#84cc16">Limette</option>
-    <option value="#0d9488">Smaragd</option>
-    <option value="#00f5d4">Türkis</option>
-  </optgroup>
-
-  <optgroup label="Nachtfarben">
-    <option value="#2563eb">Königsblau</option>
-    <option value="#00d2ff">Cyan</option>
-    <option value="#1e40af">Dark Blue</option>
-    <option value="#6366f1">Indigo</option>
-    <option value="#d946ef">Violett</option>
-    <option value="#ff007f">Rosa</option>
-    <option value="#7c3aed">Lavendel</option>
-  </optgroup>
-  
-  <optgroup label="Pastellfarben">
-    <option value="#ffb3c6">Helles Rosa</option>
-    <option value="#ffd166">Apricot</option>
-    <option value="#ffee55">Pastellgelb</option>
-    <option value="#99e2b4">Light Mint</option>
-    <option value="#70e000">Candy-Grün</option>
-    <option value="#90e0ef">Eisblau</option>
-    <option value="#c8b6ff">Soft-Violett</option>
-  </optgroup>
-
-  <optgroup label="Tarnfarben">
-    <option value="#78716c">Sand</option>
-    <option value="#a39171">Guerilla Khaki</option>
-    <option value="#475569">Schiefer</option>
-    <option value="#1e293b">Carbon</option>
-    <option value="#e2e8f0">Hellgrau</option>
-    <option value="#7c2d12">Rostbraun</option>
-  </optgroup>
-
-  <optgroup label="Luxusfarben">
-    <option value="#ffd700">Gold</option>
-    <option value="#e5e7eb">Silber</option>
-    <option value="#4a044e">Velvet</option>
-  </optgroup>
-</select>
-        </div>
+<div class="color-picker-container">
+  <button type="button" class="tb-color-btn" id="highlightBtn" title="Textmarker" aria-label="Textmarker Farbe">
+    <span class="color-icon" style="background: var(--panel);">M</span>
+    <div class="color-indicator" id="highlightIndicator"></div>
+  </button>
+  <div class="color-palette" id="highlightPalette" style="display: none;"></div>
+</div>
+    </div>
       </div>
 
        <div class="group">
