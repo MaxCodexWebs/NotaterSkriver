@@ -1,8 +1,13 @@
 [
     {
-        "badge": "Version 0.8",
-        "title": "Update",
-        "content": "- Neue Hintergründe beim Dashboard und im Editor\n- Optimiert für Handys und Tablets\n- Fehlerbehebungen und vieles mehr!"
+        "badge": "Update",
+        "title": "Version 0.9",
+        "content": "Offizieller .docx Support und ab jetzt mit 140 Farben, beim Makieren und bei der Schriftfarbe!"
+    },
+    {
+        "badge": "Update",
+        "title": "Version 0.8",
+        "content": "| Neue Hintergründe beim Dashboard und im Editor | Optimiert für Handys und Tablets | Fehlerbehebungen und vieles mehr!"
     },
     {
         "badge": "Neu",
