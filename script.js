@@ -547,18 +547,29 @@ document.getElementById('insertHr').addEventListener('click', function() {
   
   document.getElementById('headingStyle').addEventListener('change', e => exec('formatBlock', e.target.value));
 
-// 10 Hauptfarben statt 8 (mehr Zwischenschritte für schönere Übergänge)
+/* Schriftfarbe */ 
+// 20 Hauptfarben
 const baseColors = [
-  [0, '0%'],     // 1. Spalte: Graustufen (inkl. Weiß & Schwarz)
+  [0, '0%'],      // 1. Spalte: Graustufen (inkl. Weiß & Schwarz)
   [0, '100%'],    // 2. Spalte: Rot
-  [30, '100%'],   // 3. Spalte: Orange
-  [55, '100%'],   // 4. Spalte: Gelb
-  [95, '100%'],   // 5. Spalte: Hellgrün
-  [140, '100%'],  // 6. Spalte: Dunkelgrün
-  [180, '100%'],  // 7. Spalte: Cyan / Türkis
-  [215, '100%'],  // 8. Spalte: Hellblau
-  [245, '100%'],  // 9. Spalte: Dunkelblau
-  [300, '100%'],  // 10. Spalte: Lila / Pink
+  [20, '100%'],   // 3. Spalte: Rotorange
+  [40, '100%'],   // 4. Spalte: Orange
+  [55, '100%'],   // 5. Spalte: Gelb
+  [75, '100%'],   // 6. Spalte: Lime / Gelbgrün
+  [95, '100%'],   // 7. Spalte: Hellgrün
+  [120, '100%'],  // 8. Spalte: Reingrün
+  [140, '100%'],  // 9. Spalte: Dunkelgrün
+  [165, '100%'],  // 10. Spalte: Blaugrün / Mint
+  [180, '100%'],  // 11. Spalte: Cyan / Türkis
+  [200, '100%'],  // 12. Spalte: Azurblau
+  [215, '100%'],  // 13. Spalte: Hellblau
+  [230, '100%'],  // 14. Spalte: Mittelblau
+  [245, '100%'],  // 15. Spalte: Dunkelblau
+  [270, '100%'],  // 16. Spalte: Violett
+  [290, '100%'],  // 17. Spalte: Purpur
+  [310, '100%'],  // 18. Spalte: Magenta
+  [330, '100%'],  // 19. Spalte: Pink-Rot
+  [345, '100%']   // 20. Spalte: Himbeer / Karmesinrot
 ];
 
 // 7 Helligkeitsstufen (von oben nach unten) für eine größere Palette
@@ -621,7 +632,51 @@ btn.addEventListener('click', (e) => {
 document.addEventListener('click', () => {
   palette.style.display = 'none';
 });
-  document.getElementById('highlightColor').addEventListener('change', e => exec('hiliteColor', e.target.value));
+/* Highlighter */
+const highlightPalette = document.getElementById('highlightPalette');
+const highlightBtn = document.getElementById('highlightBtn');
+const highlightIndicator = document.getElementById('highlightIndicator');
+
+// Palette dynamisch aufbauen (gleiche Farben wie bei der Schrift)
+lightnessLevels.forEach(row => {
+  baseColors.forEach(c => {
+    const colorCell = document.createElement('div');
+    colorCell.classList.add('color-cell');
+    
+    let hslColor;
+    if (c[1] === '0%') {
+      const grayLightness = [100, 85, 70, 50, 35, 18, 0];
+      hslColor = `hsl(0, 0%, ${grayLightness[row]}%)`;
+    } else {
+      const colorLightness = [93, 80, 65, 50, 38, 25, 15];
+      hslColor = `hsl(${c[0]}, ${c[1]}, ${colorLightness[row]}%)`;
+    }
+    
+    colorCell.style.backgroundColor = hslColor;
+    
+    colorCell.addEventListener('mousedown', (e) => e.preventDefault());
+    
+    colorCell.addEventListener('click', (e) => {
+      exec('hiliteColor', hslColor);
+      highlightIndicator.style.backgroundColor = hslColor;
+      highlightPalette.style.display = 'none';
+    });
+    
+    highlightPalette.appendChild(colorCell);
+  });
+});
+
+// Dropdown öffnen/schließen für den Highlighter
+highlightBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  // Schließe eventuell offene andere Menüs falls nötig
+  highlightPalette.style.display = highlightPalette.style.display === 'grid' ? 'none' : 'grid';
+});
+
+// Globales Schließen bei Klick außerhalb
+document.addEventListener('click', () => {
+  highlightPalette.style.display = 'none';
+});
   
   /* ── Zeilenabstand ────────────────────────────────────────── */
   const lhSelector = document.getElementById('lineHeightSelector');
