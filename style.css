@@ -1209,7 +1209,7 @@ a.catalog-card p {
     left:50%;
     transform:translateX(-50%);
     width:min(94vw,300px);
-    grid-template-columns:repeat(10,1fr);
+    grid-template-columns:repeat(20,1fr);
     gap:1vw;
     padding:2vw;
   }
